@@ -9,7 +9,5 @@ public class TesteDeImposotos {
 		CalculadorDeImpostos calculador = new CalculadorDeImpostos();
 		calculador.realizaCalculo(orcamento, icms);
 		calculador.realizaCalculo(orcamento, iss);
-		
-		System.out.println("teste PUSH");
 	}
 }
