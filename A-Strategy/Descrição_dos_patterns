@@ -1,0 +1,48 @@
+Strategy - Polimorfismo; Qualquer objeto de um mesmo tipo (Imposto), pode ser
+passado como parâmetro de um método, e utilizado dentro desde metodo pela mesma
+chamada (ex. imposto.calcula(blah)).
+
+Chain Of Responsability - Uma chamada a um método, desencadeia a chamada à vários
+métodos de vários objetos de um mesmo tipo até um deles retornar true. A ordem
+da sequência é previamente definida. Cada um destes objetos de um mesmo tipo
+guarda uma instância do próximo (da cadeia), e se retornar false, o chama.
+
+Template Method - Vários objetos de um mesmo tipo, têm o mesmo algorítimo
+(máscara). Então é delegado a chamada destes métodos à um método pai, que
+implementará uma máscara, que possui 'buracos' que são os métodos implementados na
+classe filho.
+
+Decorator - Alguns objetos podem ser compostos. Ou seja, usar a funcionalidade de
+outro objeto do mesmo tipo. É passado um segundo objeto (decorador), na construção
+de um objeto. Este segundo objeto, é armazenado no atributo da classe pai 
+(ImpostoComposto). O pai, além de armazenar este segundo objeto em seu atributo,
+também possui um método que será chamado pelo filho (de dentro do método calcula())
+que verifica se o atributo não é null, ou seja, se possui um objeto composto e caso 
+exista ele chamará o método (calcula()) deste objeto composto, caso contrário, retornará 
+um valor padrão (0 no caso).
+
+State - Alguns objetos necessitam de um estado, e muitas vezes, de um comportamento
+diferenciado, conforme o estado específico no qual ele se encontra atualmente.
+A classe de um pojo, guardará um atributo que faz referência à interface que 
+representa o estado atual (EstadoAtualDoObjeto), e alguns métodos que permitem alterarmos
+entre os objetos implementadores que representam cada estado (Aprovado), e outros
+métodos que também usam este atributo do EstadoAtualDoObjeto, para executar ação
+ou lançar uma Runtime, de acordo com o estado atual.
+
+Builder - Permite criar objetos complexos com maior facilidade. Pode usar os 
+metodos flutuantes para facilitar a leitura da construção. Haverá um pojo 
+(NotaFiscal), uma classe - intermediária - construtora (ContrutorNotaFiscal), que
+por sua vez, trata todos os atributos recebidos através da "construção facilitada"
+e por final, repassa ao pojo (NotaFiscal).
+
+Observer - Na construção do Builder, pode-se definir serviços à serem executados
+ao final da construção. No momento da construção, é passado um objeto implementador
+da interface ExecutaAcao como parâmetro do metodo à classe construtora
+(ConstrutorNotaFiscal), que a recebe e inclui numa lista. Esta lista é iterada no
+mesmo metodo que constroi a NotaFiscal, e cada iteração, chamado o metodo executa
+da interface implementada por cada ação.
+
+Junção 
+Template Method + Chain Of Responsability
+
+ 
