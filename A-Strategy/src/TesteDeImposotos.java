@@ -10,6 +10,6 @@ public class TesteDeImposotos {
 		calculador.realizaCalculo(orcamento, icms);
 		calculador.realizaCalculo(orcamento, iss);
 		
-		System.out.println("este PUSH");
+		System.out.println("teste PUSH");
 	}
 }
