@@ -46,6 +46,6 @@ da interface implementada por cada ação.
 
 ** Escrever novamente sobre o Pattern Command e a diferença dele para o Observer.
 
-Interpreter - ...
+Interpreter - ....
 
  
