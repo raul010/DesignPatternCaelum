@@ -42,7 +42,10 @@ da interface ExecutaAcao como parâmetro do metodo à classe construtora
 mesmo metodo que constroi a NotaFiscal, e cada iteração, chamado o metodo executa
 da interface implementada por cada ação.
 
-Junção 
-Template Method + Chain Of Responsability
+-----------------
+
+** Escrever novamente sobre o Pattern Command e a diferença dele para o Observer.
+
+Interpreter - ...
 
  
