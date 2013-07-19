@@ -35,7 +35,8 @@ metodos flutuantes para facilitar a leitura da construção. Haverá um pojo
 por sua vez, trata todos os atributos recebidos através da "construção facilitada"
 e por final, repassa ao pojo (NotaFiscal).
 
-Observer - Na construção do Builder, pode-se definir serviços à serem executados
+Observer - Um objeto notifica outro, se ouver alterações neste. 
+Na construção do Builder, pode-se definir serviços à serem executados
 ao final da construção. No momento da construção, é passado um objeto implementador
 da interface ExecutaAcao como parâmetro do metodo à classe construtora
 (ConstrutorNotaFiscal), que a recebe e inclui numa lista. Esta lista é iterada no
@@ -43,9 +44,35 @@ mesmo metodo que constroi a NotaFiscal, e cada iteração, chamado o metodo execut
 da interface implementada por cada ação.
 
 -----------------
+Patterns da Wikipedia
 
-** Escrever novamente sobre o Pattern Command e a diferença dele para o Observer.
+Command - Um objeto encapsula toda nececidade para executar um metodo em outro objeto.
+No exemplo:
+Os objetos do tipo Command (FlipUpCommand e FlipDownCommand) sabem trabalhar com o metodo
+Light.turnOn e Light.turnOFF, respectivamente, em suas implementações de Command.execute().
+Uma Invoker, que é uma classe intermediária (Switch) é responsável por chamar a execução
+do comando. Alternativamente, ele também salva o histórico da ação. A implementação correta 
+de Command, é passado como parâmetro do método. 
 
-Interpreter - ....
+
+Interpreter - Define uma linguagem macro ou sintaxe, fazendo o parse e armazenando
+em objetos cada operação respectiva. 
+No exemplo: 
+Todas as classes exceto o teste, são de um mesmo tipo [Expression], que possuem um
+método [interpret()]. Uma delas [Evaluator:Expression] faz o parser, e coloca os dados 
+[String] passados em objetos dos tipos mencionados, que os representem ["w x z" = 
+Variable:Expression, "+" = Plus:Expression e "-" Minus:Expression].
+A classe de teste, chama o objeto [Plus] armazenado nos atributos da Evaluator:Expression
+e então inicia a cadeia de chamada polimórfica dos metodos Expression.interpret().
+Este objeto [Plus] é único, pois os outros [Minus e Variable] estão encapsulados nele.
+A classe Plus ou Minus, tem uma implementação do interpret a mais (de mais ou menos), em relação
+aos outros tipos Expression [Variable, Number -- O metodo no Evaluator apenas serve de
+inicio da chamada da cadeia].
+O Plus é chamado. Contem dois atributos chamados left e right. Um contem o Minus, e o
+outro uma Variable. O interpret chamará portanto:
+leftExpression|Minus|.interpret(variables) - rightExpression|Variable|.interpret(variables).
+Em Minus o interpret() tem duas variáveis em seus atributos, portanto:
+leftExpression|Variable|.interpret(variables) - rightExpression|Variable|.interpret(variables).
+
 
  

@@ -3,7 +3,7 @@
 class PressSwitch_Main {
 	public static void main(String[] args) {
 		Light lamp = new Light();
-		FlipUpCommand switchUp = new FlipUpCommand(lamp);
+		Command switchUp = new FlipUpCommand(lamp);
 		Command switchDown = new FlipDownCommand(lamp);
 
 		Switch s = new Switch();
@@ -14,7 +14,7 @@ class PressSwitch_Main {
 		try {
 			
 			if (args[0].equalsIgnoreCase("ON")) s.storeAndExecute(switchUp);
-			else if (args[0].equalsIgnoreCase("OF")) s.storeAndExecute(switchDown);
+			else if (args[0].equalsIgnoreCase("OFF")) s.storeAndExecute(switchDown);
 			
 			else System.out.println("Argument \"ON\" or \"OFF\" is required.");
 		
