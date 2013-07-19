@@ -1,5 +1,5 @@
 Strategy - Polimorfismo; Qualquer objeto de um mesmo tipo (Imposto), pode ser
-passado como parâmetro de um método, e utilizado dentro desde metodo pela mesma
+passado como parâmetro de um método, e utilizado dentro desde método pela mesma
 chamada (ex. imposto.calcula(blah)).
 
 Chain Of Responsability - Uma chamada a um método, desencadeia a chamada à vários
@@ -38,9 +38,9 @@ e por final, repassa ao pojo (NotaFiscal).
 Observer - Um objeto notifica outro, se ouver alterações neste. 
 Na construção do Builder, pode-se definir serviços à serem executados
 ao final da construção. No momento da construção, é passado um objeto implementador
-da interface ExecutaAcao como parâmetro do metodo à classe construtora
+da interface ExecutaAcao como parâmetro do método à classe construtora
 (ConstrutorNotaFiscal), que a recebe e inclui numa lista. Esta lista é iterada no
-mesmo metodo que constroi a NotaFiscal, e cada iteração, chamado o metodo executa
+mesmo método que constrói a NotaFiscal, e cada iteração, chamado o método executa
 da interface implementada por cada ação.
 
 -----------------
@@ -48,9 +48,9 @@ Patterns da Wikipedia
 
 Command
 
-Um objeto encapsula toda nececidade para executar um metodo em outro objeto.
+Um objeto encapsula toda necessidade para executar um método em outro objeto.
 No exemplo:
-Os objetos concretos do tipo Command (FlipUpCommand e FlipDownCommand) sabem trabalhar com o metodo
+Os objetos concretos do tipo Command (FlipUpCommand e FlipDownCommand) sabem trabalhar com o método
 Light.turnOn e Light.turnOFF, respectivamente, em suas implementações de Command.execute().
 Um Invoker, que é uma classe intermediária (Switch) é responsável por chamar a execução
 dos comandos. Alternativamente, ele também salva o histórico da ação. A implementação do Command
@@ -67,7 +67,7 @@ método [interpret()]. Uma delas [Evaluator:Expression] faz o parser, e coloca os
 [String] passados em objetos dos tipos mencionados, que os representem ["w x z" = 
 Variable:Expression, "+" = Plus:Expression e "-" Minus:Expression].
 A classe de teste, chama o objeto [Plus] armazenado nos atributos da Evaluator:Expression
-e então inicia a cadeia de chamada polimórfica dos metodos Expression.interpret().
+e então inicia a cadeia de chamada polimórfica dos métodos Expression.interpret().
 Este objeto [Plus] é único, pois os outros [Minus e Variable] estão encapsulados nele.
 A classe Plus ou Minus, tem uma implementação do interpret a mais (de mais ou menos), em relação
 aos outros tipos Expression [Variable, Number -- O metodo no Evaluator apenas serve de
@@ -102,14 +102,14 @@ entre os objetos que estão se comunicando.
 
 No Exemplo:
 Resumo: A classe concreta que intermedia [Mediator] mantém todos os objetos de um tipo [tipo Command 
-no caso -- possuem um metodo execute()] e possui ações para trabalhar com cada um destes objetos
+no caso -- possuem um método execute()] e possui ações para trabalhar com cada um destes objetos
 de forma independente. Então é usada uma mesma referência de Mediator, para armazenar todos os 
 outros objetos.
 
 1 - Esta referência de Mediator, é enviado via parâmetro (do construtor no caso) e armazenado em cada
 um de seus respectivos objetos. Então os objetos conhecem seu mediador.
 
-2 - Cada bjeto envia a si próprio (this), via parâmetro, para o Mediador registrá-lo 
+2 - Cada objeto envia a si próprio (this), via parâmetro, para o Mediador registrá-lo 
 (em seu atributo).
 Portanto o Mediator registra os objetos do mesmo tipo [Mediator.register()], para mais 
 tarde trabalhar com cada um deles [book(), view() ou search()]. ISTO DELEGA TODA A COMUNICAÇÃO
@@ -122,5 +122,4 @@ com a sua referência armazenada de BtnView e alternativamente, faz modificações 
 objetos também (como alternar flags).
 
  
-
 
