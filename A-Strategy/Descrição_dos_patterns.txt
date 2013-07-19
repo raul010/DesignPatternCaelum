@@ -46,16 +46,20 @@ da interface implementada por cada ação.
 -----------------
 Patterns da Wikipedia
 
-Command - Um objeto encapsula toda nececidade para executar um metodo em outro objeto.
+Command
+
+Um objeto encapsula toda nececidade para executar um metodo em outro objeto.
 No exemplo:
-Os objetos do tipo Command (FlipUpCommand e FlipDownCommand) sabem trabalhar com o metodo
+Os objetos concretos do tipo Command (FlipUpCommand e FlipDownCommand) sabem trabalhar com o metodo
 Light.turnOn e Light.turnOFF, respectivamente, em suas implementações de Command.execute().
-Uma Invoker, que é uma classe intermediária (Switch) é responsável por chamar a execução
-do comando. Alternativamente, ele também salva o histórico da ação. A implementação correta 
-de Command, é passado como parâmetro do método. 
+Um Invoker, que é uma classe intermediária (Switch) é responsável por chamar a execução
+dos comandos. Alternativamente, ele também salva o histórico da ação. A implementação do Command
+optada (via polimorfismo), é passada como parâmetro do método. 
 
 
-Interpreter - Define uma linguagem macro ou sintaxe, fazendo o parse e armazenando
+Interpreter 
+
+Define uma linguagem macro ou sintaxe, fazendo o parse e armazenando
 em objetos cada operação respectiva. 
 No exemplo: 
 Todas as classes exceto o teste, são de um mesmo tipo [Expression], que possuem um
@@ -75,4 +79,48 @@ Em Minus o interpret() tem duas variáveis em seus atributos, portanto:
 leftExpression|Variable|.interpret(variables) - rightExpression|Variable|.interpret(variables).
 
 
+Iterator - Pulei. Reprodução simples das Coleções do JavaSE.
+
+
+Mediator
+
+Um Objeto distribui comunicação entre dois ou mais objetos.
+
+Desacopla e gerencia as comunicações entre um grupo de objetos.
+
+Unificação da interface de um sistema.
+
+Normalmente, um programa é feito por um número muito grande de classes. Então, a lógica 
+e o código são distribuídos entre essas classes. No entanto, quanto mais classes houver 
+no seu projeto, a comunicação entre essas classes será mais complexa. Isso faz com que
+a leitura e a manutenção do programa fique mais difícil, tal situação acarreta na 
+dificuldade de mudanças no projeto, já que, uma simples mudança pode afetar todo o código
+e as outras classes.
+
+A comunicação entre os objetos é encapsulada com um objeto mediador. Isso reduz a dependência 
+entre os objetos que estão se comunicando.
+
+No Exemplo:
+Resumo: A classe concreta que intermedia [Mediator] mantém todos os objetos de um tipo [tipo Command 
+no caso -- possuem um metodo execute()] e possui ações para trabalhar com cada um destes objetos
+de forma independente. Então é usada uma mesma referência de Mediator, para armazenar todos os 
+outros objetos.
+
+1 - Esta referência de Mediator, é enviado via parâmetro (do construtor no caso) e armazenado em cada
+um de seus respectivos objetos. Então os objetos conhecem seu mediador.
+
+2 - Cada bjeto envia a si próprio (this), via parâmetro, para o Mediador registrá-lo 
+(em seu atributo).
+Portanto o Mediator registra os objetos do mesmo tipo [Mediator.register()], para mais 
+tarde trabalhar com cada um deles [book(), view() ou search()]. ISTO DELEGA TODA A COMUNICAÇÃO
+ENTRE OS OBJETOS, AO MEDIADOR.
+
+3 - No teste do botão (em Java Swing), é chamado polimorficamente o Command.execute() do
+objeto que representa o Botão apertado (BtnView por ex.), que por sua vez, chama o mediador.view()
+(daquele único objeto mediador existente e que conhece este e todos os botões), e trabalha
+com a sua referência armazenada de BtnView e alternativamente, faz modificações nos outros
+objetos também (como alternar flags).
+
  
+
+
