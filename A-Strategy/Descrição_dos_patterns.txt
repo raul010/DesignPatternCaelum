@@ -1,3 +1,5 @@
+Algumas observações pessoais sobre cada um dos Patterns.
+
 Strategy - Polimorfismo; Qualquer objeto de um mesmo tipo (Imposto), pode ser
 passado como parâmetro de um método, e utilizado dentro desde método pela mesma
 chamada (ex. imposto.calcula(blah)).
@@ -46,7 +48,7 @@ da interface implementada por cada ação.
 -----------------
 Patterns da Wikipedia
 
-Command
+COMMAND
 
 Um objeto encapsula toda necessidade para executar um método em outro objeto.
 No exemplo:
@@ -57,7 +59,7 @@ dos comandos. Alternativamente, ele também salva o histórico da ação. A implemen
 optada (via polimorfismo), é passada como parâmetro do método. 
 
 
-Interpreter 
+INTERPRETER 
 
 Define uma linguagem macro ou sintaxe, fazendo o parse e armazenando
 em objetos cada operação respectiva. 
@@ -79,15 +81,10 @@ Em Minus o interpret() tem duas variáveis em seus atributos, portanto:
 leftExpression|Variable|.interpret(variables) - rightExpression|Variable|.interpret(variables).
 
 
-Iterator - Pulei. Reprodução simples das Coleções do JavaSE.
-
-
-Mediator
+MEDIATOR
 
 Um Objeto distribui comunicação entre dois ou mais objetos.
-
 Desacopla e gerencia as comunicações entre um grupo de objetos.
-
 Unificação da interface de um sistema.
 
 Normalmente, um programa é feito por um número muito grande de classes. Então, a lógica 
@@ -121,5 +118,34 @@ objeto que representa o Botão apertado (BtnView por ex.), que por sua vez, chama
 com a sua referência armazenada de BtnView e alternativamente, faz modificações nos outros
 objetos também (como alternar flags).
 
- 
+
+MEMENTO
+
+Memento é um padrão de projeto que permite armazenar o estado interno de um objeto em um
+determinado momento, para que seja possível retorná-lo a este estado, caso necessário.
+É análogo à uma serialização.
+
+No exemplo:
+1 - É criado uma lista do objeto [Memento] com, pelo menos, os mesmos atributos do objeto 
+[Originator] que será salvo, o objeto de origem (objeto real -- de negócio).
+
+2 - Apenas uma instância do objeto de origem é criada.
+
+3 - O estado desta instância é alterado, ou seja, seus atributos são modificados.
+Dentro do próprio objeto de origem, existe um saveToMemento() e restoreFromMemento().
+O primeiro método passa os atributos atuais deste objeto de origem, via construtor do 
+objeto Memento, que inicializa todos seus atributos com estes mesmos valores, ficando idêntico
+o objeto de origem, e então retorna um novo objeto Memento.
+
+4 - Este novo objeto Memento retornado pelo saveToMemento() é armazenada então na lista criada,
+então os estados do objeto de origem continuam a serem alterados, enquanto o Memento permanece
+inalterado. O processo é repetido quantas vezes for necessário salvar o estado do objeto de 
+origem no objeto Memento, cada uma das vezes, criando uma nova instância de Memento, e populando
+a lista.
+
+5 - Por praticidade, esta mesma instância de Originator (mas pode ser qualquer outra), chama
+restoreFromMemento(Memento m), passando um objeto específico de Memento, salvo na lista, 
+atribuindo-se então, os mesmos atributos anteriormente salvos em Memento, recuperados agora
+portanto em Originator.
+  
 
