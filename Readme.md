@@ -1,14 +1,3 @@
-#Algumas observações pessoais sobre cada um dos Patterns.
-
-##Algumas observações pessoais sobre cada um dos Patterns.
-
-###Algumas observações pessoais sobre cada um dos Patterns.
-
-####Algumas observações pessoais sobre cada um dos Patterns.
-
-######Algumas observações pessoais sobre cada um dos Patterns.
-
-
 ######Algumas observações pessoais sobre cada um dos Patterns.
 
 Strategy
@@ -92,8 +81,7 @@ Interpreter
 Define uma linguagem macro ou sintaxe, fazendo o parse e armazenando
 em objetos cada operação respectiva. 
 
-No exemplo: 
-
+######No exemplo:
 Todas as classes exceto o teste, são de um mesmo tipo [Expression], que possuem um
 método [interpret()]. Uma delas [Evaluator:Expression] faz o parser, e coloca os dados 
 [String] passados em objetos dos tipos mencionados, que os representem ["w x z" = 
@@ -126,8 +114,7 @@ e as outras classes.
 A comunicação entre os objetos é encapsulada com um objeto mediador. Isso reduz a dependência 
 entre os objetos que estão se comunicando.
 
-No Exemplo:
-
+######No exemplo:
 #Resumo: A classe concreta que intermedia [Mediator] mantém todos os objetos de um tipo [tipo Command 
 no caso -- possuem um método execute()] e possui ações para trabalhar com cada um destes objetos
 de forma independente. Então é usada uma mesma referência de Mediator, para armazenar todos os 
@@ -154,7 +141,7 @@ Memento é um padrão de projeto que permite armazenar o estado interno de um obje
 determinado momento, para que seja possível retorná-lo a este estado, caso necessário.
 É análogo à uma serialização.
 
-#No exemplo:
+######No exemplo:
 1 - É criado uma lista do objeto [Memento] com, pelo menos, os mesmos atributos do objeto 
 [Originator] que será salvo, o objeto de origem (objeto real -- de negócio).
 
@@ -187,8 +174,7 @@ ela opera. É uma maneira de separar um algoritmo da estrutura de um objeto.  Um 
 é a habilidade de adicionar novas funcionalidades a estruturas de um objeto pré-existente sem a 
 necessidade de modificá-las.
 
-No exemplo:
-
+######No exemplo:
 Ao invés de criar "print()" em cada subclasse de Elemento (Wheel, Engine, Body, and Car), deixando
 o código de impressão espalhado, uma única classe Visitante [CarElementPrintVisitor] efetua a
 ação de impressão requisitada.
