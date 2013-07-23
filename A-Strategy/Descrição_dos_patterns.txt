@@ -147,5 +147,33 @@ a lista.
 restoreFromMemento(Memento m), passando um objeto específico de Memento, salvo na lista, 
 atribuindo-se então, os mesmos atributos anteriormente salvos em Memento, recuperados agora
 portanto em Originator.
-  
+
+
+VISITOR
+
+Operações que podem ser aplicadas a objetos sem mudar suas classes.
+
+Permite que se crie um nova operação sem que se mude a classe dos elementos sobre as quais 
+ela opera. É uma maneira de separar um algoritmo da estrutura de um objeto.  Um resultado prático
+é a habilidade de adicionar novas funcionalidades a estruturas de um objeto pré-existente sem a 
+necessidade de modificá-las.
+
+No exemplo:
+
+Ao invés de criar "print()" em cada subclasse de Elemento (Wheel, Engine, Body, and Car), deixando
+o código de impressão espalhado, uma única classe Visitante [CarElementPrintVisitor] efetua a
+ação de impressão requisitada.
+
+Excencial: 
+1 - Os tipos corretos de Elemento (definidos em runtime/polimorfismo) [e.g Wheels] delegam algumas 
+ações [elemento.accept(:Visitor)] para o tipo correto Visitor.
+
+2 - Dentro deste accept(), na classe do Elemento [e.g Wheels], o visitor enviado anteriormente por
+parâmetro [runtime], tem todas as sobrecargas dos tipos concretos de Element, ele então chamará 
+seu método visitor.visit(THIS) [e.g visit(:Wheels)] (para em runtime, via sobrecarga, tratar o 
+Elemento correto).
+
+3 - Existe o Elemento "diferenciado", Car. Ele é o primeiro a ser chamado [car.accept()] e o
+último a ser realizar sua ação [visitor.visit()].
+
 
