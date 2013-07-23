@@ -54,14 +54,16 @@ metodos flutuantes para facilitar a leitura da construção. Haverá um pojo
 por sua vez, trata todos os atributos recebidos através da "construção facilitada"
 e por final, repassa ao pojo (NotaFiscal).
 
+Observer 
 ---------------
-Observer - Um objeto notifica outro, se ouver alterações neste. 
+Um objeto notifica outro, se ouver alterações neste. 
 Na construção do Builder, pode-se definir serviços à serem executados
 ao final da construção. No momento da construção, é passado um objeto implementador
 da interface ExecutaAcao como parâmetro do método à classe construtora
 (ConstrutorNotaFiscal), que a recebe e inclui numa lista. Esta lista é iterada no
 mesmo método que constrói a NotaFiscal, e cada iteração, chamado o método executa
 da interface implementada por cada ação.
+
 
 -----------------
 Patterns da Wikipedia
