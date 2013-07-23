@@ -8,12 +8,8 @@
 
 ######Algumas observações pessoais sobre cada um dos Patterns.
 
-#######Algumas observações pessoais sobre cada um dos Patterns.
 
-########Algumas observações pessoais sobre cada um dos Patterns.
-
-
-
+######Algumas observações pessoais sobre cada um dos Patterns.
 
 Strategy
 ----------
@@ -84,8 +80,7 @@ Command
 -----------
 Um objeto encapsula toda necessidade para executar um método em outro objeto.
 
-No exemplo:
-
+####No exemplo:
 Os objetos concretos do tipo Command (FlipUpCommand e FlipDownCommand) sabem trabalhar com o método
 Light.turnOn e Light.turnOFF, respectivamente, em suas implementações de Command.execute().
 Um Invoker, que é uma classe intermediária (Switch) é responsável por chamar a execução
