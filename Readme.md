@@ -179,7 +179,8 @@ Ao invés de criar "print()" em cada subclasse de Elemento (Wheel, Engine, Body, 
 o código de impressão espalhado, uma única classe Visitante [CarElementPrintVisitor] efetua a
 ação de impressão requisitada.
 
-Essencial: 
+Essencial:
+
 1 - Os tipos corretos de Elemento (definidos em runtime/polimorfismo) [e.g Wheels] delegam algumas 
 ações [elemento.accept(:Visitor)] para o tipo correto Visitor.
 
@@ -200,7 +201,7 @@ Quando usar o padrão Abstract Factory?
 
 - Quando um sistema deve ser independente de como seus produtos são criados, compostos e
 representados;
-- Quando um sistema deve ser configurado com uma entre várias famílias de produtos;
+-- Quando um sistema deve ser configurado com uma entre várias famílias de produtos;
 - Quando uma família de produtos relacionados foi projetada para uso conjunto e você deve 
 implementar essa restrição;
 - Quando você quer fornecer uma biblioteca de classes e quer revelar sua interface e não sua 
