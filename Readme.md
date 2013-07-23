@@ -1,4 +1,27 @@
+#Algumas observações pessoais sobre cada um dos Patterns.
+
+##Algumas observações pessoais sobre cada um dos Patterns.
+
 ###Algumas observações pessoais sobre cada um dos Patterns.
+
+####Algumas observações pessoais sobre cada um dos Patterns.
+
+######Algumas observações pessoais sobre cada um dos Patterns.
+
+#Algumas observações pessoais sobre cada um dos Patterns.
+adf
+
+##Algumas observações pessoais sobre cada um dos Patterns.
+adf
+
+###Algumas observações pessoais sobre cada um dos Patterns.
+adf
+
+####Algumas observações pessoais sobre cada um dos Patterns.
+adsf
+
+######Algumas observações pessoais sobre cada um dos Patterns.
+adf
 
 Strategy
 ----------
