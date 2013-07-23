@@ -201,7 +201,7 @@ Quando usar o padrão Abstract Factory?
 
 - Quando um sistema deve ser independente de como seus produtos são criados, compostos e
 representados;
--- Quando um sistema deve ser configurado com uma entre várias famílias de produtos;
+- - Quando um sistema deve ser configurado com uma entre várias famílias de produtos;
 - Quando uma família de produtos relacionados foi projetada para uso conjunto e você deve 
 implementar essa restrição;
 - Quando você quer fornecer uma biblioteca de classes e quer revelar sua interface e não sua 
