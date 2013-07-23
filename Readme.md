@@ -190,3 +190,36 @@ Elemento correto).
 
 3 - Existe o Elemento "diferenciado", Car. Ele é o primeiro a ser chamado [car.accept()] e o
 último a ser realizar sua ação [visitor.visit()].
+
+Abstract Factory
+----------------
+Provê uma interface para criar uma família de objetos relacionados ou dependentes sem especificar 
+suas classes concretas.
+
+Quando usar o padrão Abstract Factory?
+
+- Quando um sistema deve ser independente de como seus produtos são criados, compostos e
+representados;
+- Quando um sistema deve ser configurado com uma entre várias famílias de produtos;
+- Quando uma família de produtos relacionados foi projetada para uso conjunto e você deve 
+implementar essa restrição;
+- Quando você quer fornecer uma biblioteca de classes e quer revelar sua interface e não sua 
+implementação;
+- Não permita portanto que objetos sejam diretamente criados com new.
+
+http://www.dsc.ufcg.edu.br/~jacques/cursos/map/html/pat/abstractfactory.htm
+
+######No exemplo:
+Ao receber um dado externo, é definido qual dos Objetos de um mesmo tipo [Factory] que o 
+represente que será utilizado [OSXFactory, no caso].
+
+Este objeto é então passado no construtor de uma classe intermediária [Application]. Ela é 
+responsável por armazenar o objeto concreto em seu atributo, e mais tarde será invocado
+seu método que já sabe, em tempo de execução, tipo concreto Factory [OSXFactory] e chama
+seu método deverá ser chamado [factory|:OSXFactory|.createButton()].
+
+É retornado, portanto, para Application, a referência concreta do tipo Button, no caso OSXButton,
+que então chama o método de OSXButton.
+
+
+
