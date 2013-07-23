@@ -201,7 +201,7 @@ Quando usar o padrão Abstract Factory?
 
 - Quando um sistema deve ser independente de como seus produtos são criados, compostos e
 representados;
-- - Quando um sistema deve ser configurado com uma entre várias famílias de produtos;
+- Quando um sistema deve ser configurado com uma entre várias famílias de produtos;
 - Quando uma família de produtos relacionados foi projetada para uso conjunto e você deve 
 implementar essa restrição;
 - Quando você quer fornecer uma biblioteca de classes e quer revelar sua interface e não sua 
@@ -222,5 +222,34 @@ seu método deverá ser chamado [factory|:OSXFactory|.createButton()].
 É retornado, portanto, para Application, a referência concreta do tipo Button, no caso OSXButton,
 que então chama o método de OSXButton.
 
+Factory Method
+---------------
+http://www.dsc.ufcg.edu.br/~jacques/cursos/map/html/pat/factory.htm
+Define uma interface para criar objetos de forma a deixar subclasses decidirem qual classe
+instanciar.
+Factory Method deixa que subclasses façam a instanciação.
 
+A idéia é simples: em vez de um cliente que precisa de um objeto chamar new e assim especificar
+a classe concreta que ele instancia, o cliente chama um método abstrato (Factory Method) 
+especificado em alguma classe abstrata (ou interface) e a subclasse concreta vai decidir que 
+tipo exato de objeto criar e retornar.
+
+- Mudar a subclasse concreta que cria o objeto permite mudar a classe do objeto criado sem que o
+cliente saiba;
+- Permite estender a funcionalidade através da construção de subclasses sem afetar os clientes.
+
+
+
+###Diferenças do Abstract Factory para o Factory Method
+
+Ambos parecem semelhante, mas:
+
+- Em vez do cliente (que quer criar objetos sem saber as classes exatas) chamar um método de 
+criação (Factory Method), ele de alguma forma possui um objeto (uma Abstract Factory) e usa este
+objeto para chamar os métodos de criação;
+- Onde Factory Method quer que você seja diferente (via herança) para criar objetos diferentes,
+o Abstract Factory quer que você tenha algo diferente;
+- Se ele possuir uma referência a uma Abstract Factory diferente, toda a criação será diferente;
+- O fato de todos os métodos de criação estarem na mesma subclasse de uma Abstract Factory permite 
+satisfazer a restrição de criar apenas objetos relacionados ou dependentes.
 
