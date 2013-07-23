@@ -73,8 +73,8 @@ Patterns da Wikipedia
 
 Command
 -----------
-Um objeto encapsula toda necessidade para executar um método em outro objeto.
-No exemplo:
+***Um objeto encapsula toda necessidade para executar um método em outro objeto.
+No exemplo:***
 Os objetos concretos do tipo Command (FlipUpCommand e FlipDownCommand) sabem trabalhar com o método
 Light.turnOn e Light.turnOFF, respectivamente, em suas implementações de Command.execute().
 Um Invoker, que é uma classe intermediária (Switch) é responsável por chamar a execução
@@ -83,9 +83,13 @@ optada (via polimorfismo), é passada como parâmetro do método.
 
 Interpreter
 -----------------
-Define uma linguagem macro ou sintaxe, fazendo o parse e armazenando
+Define
+******
+ uma linguagem macro ou sintaxe, fazendo o parse e armazenando
 em objetos cada operação respectiva. 
+
 No exemplo: 
+#####
 Todas as classes exceto o teste, são de um mesmo tipo [Expression], que possuem um
 método [interpret()]. Uma delas [Evaluator:Expression] faz o parser, e coloca os dados 
 [String] passados em objetos dos tipos mencionados, que os representem ["w x z" = 
