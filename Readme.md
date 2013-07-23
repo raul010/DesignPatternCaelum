@@ -115,7 +115,7 @@ A comunicação entre os objetos é encapsulada com um objeto mediador. Isso reduz 
 entre os objetos que estão se comunicando.
 
 ######No exemplo:
-#Resumo: A classe concreta que intermedia [Mediator] mantém todos os objetos de um tipo [tipo Command 
+Resumo: A classe concreta que intermedia [Mediator] mantém todos os objetos de um tipo [tipo Command 
 no caso -- possuem um método execute()] e possui ações para trabalhar com cada um destes objetos
 de forma independente. Então é usada uma mesma referência de Mediator, para armazenar todos os 
 outros objetos.
