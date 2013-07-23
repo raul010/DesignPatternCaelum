@@ -1,6 +1,8 @@
+-------------
+
 Algumas observações pessoais sobre cada um dos Patterns.
 
---------------
+-------------
 
 Strategy
 ----------
@@ -8,19 +10,24 @@ Polimorfismo; Qualquer objeto de um mesmo tipo (Imposto), pode ser
 passado como parâmetro de um método, e utilizado dentro desde método pela mesma
 chamada (ex. imposto.calcula(blah)).
 
---------------
 
-Chain Of Responsability - Uma chamada a um método, desencadeia a chamada à vários
+Chain Of Responsability
+-----------
+Uma chamada a um método, desencadeia a chamada à vários
 métodos de vários objetos de um mesmo tipo até um deles retornar true. A ordem
 da sequência é previamente definida. Cada um destes objetos de um mesmo tipo
 guarda uma instância do próximo (da cadeia), e se retornar false, o chama.
+
+Template Method
 ------------
-Template Method - Vários objetos de um mesmo tipo, têm o mesmo algorítimo
+Vários objetos de um mesmo tipo, têm o mesmo algorítimo
 (máscara). Então é delegado a chamada destes métodos à um método pai, que
 implementará uma máscara, que possui 'buracos' que são os métodos implementados na
 classe filho.
--------------
-Decorator - Alguns objetos podem ser compostos. Ou seja, usar a funcionalidade de
+
+Decorator 
+------------
+Alguns objetos podem ser compostos. Ou seja, usar a funcionalidade de
 outro objeto do mesmo tipo. É passado um segundo objeto (decorador), na construção
 de um objeto. Este segundo objeto, é armazenado no atributo da classe pai 
 (ImpostoComposto). O pai, além de armazenar este segundo objeto em seu atributo,
