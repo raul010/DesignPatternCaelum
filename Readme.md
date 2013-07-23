@@ -36,9 +36,9 @@ que verifica se o atributo não é null, ou seja, se possui um objeto composto e c
 exista ele chamará o método (calcula()) deste objeto composto, caso contrário, retornará 
 um valor padrão (0 no caso).
 
+State
 -------------
-
-State - Alguns objetos necessitam de um estado, e muitas vezes, de um comportamento
+Alguns objetos necessitam de um estado, e muitas vezes, de um comportamento
 diferenciado, conforme o estado específico no qual ele se encontra atualmente.
 A classe de um pojo, guardará um atributo que faz referência à interface que 
 representa o estado atual (EstadoAtualDoObjeto), e alguns métodos que permitem alterarmos
@@ -46,9 +46,9 @@ entre os objetos implementadores que representam cada estado (Aprovado), e outro
 métodos que também usam este atributo do EstadoAtualDoObjeto, para executar ação
 ou lançar uma Runtime, de acordo com o estado atual.
 
---------------
-
-Builder - Permite criar objetos complexos com maior facilidade. Pode usar os 
+Builder
+------------
+Permite criar objetos complexos com maior facilidade. Pode usar os 
 metodos flutuantes para facilitar a leitura da construção. Haverá um pojo 
 (NotaFiscal), uma classe - intermediária - construtora (ContrutorNotaFiscal), que
 por sua vez, trata todos os atributos recebidos através da "construção facilitada"
@@ -65,8 +65,9 @@ da interface implementada por cada ação.
 
 -----------------
 Patterns da Wikipedia
-COMMAND.
 
+Command
+-----------
 Um objeto encapsula toda necessidade para executar um método em outro objeto.
 No exemplo:
 Os objetos concretos do tipo Command (FlipUpCommand e FlipDownCommand) sabem trabalhar com o método
@@ -75,9 +76,8 @@ Um Invoker, que é uma classe intermediária (Switch) é responsável por chamar a e
 dos comandos. Alternativamente, ele também salva o histórico da ação. A implementação do Command
 optada (via polimorfismo), é passada como parâmetro do método. 
 
+Interpreter
 -----------------
-INTERPRETER.
-
 Define uma linguagem macro ou sintaxe, fazendo o parse e armazenando
 em objetos cada operação respectiva. 
 No exemplo: 
@@ -96,10 +96,9 @@ outro uma Variable. O interpret chamará portanto:
 leftExpression|Minus|.interpret(variables) - rightExpression|Variable|.interpret(variables).
 Em Minus o interpret() tem duas variáveis em seus atributos, portanto:
 leftExpression|Variable|.interpret(variables) - rightExpression|Variable|.interpret(variables).
+
+Mediator
 ------------------
-
-MEDIATOR
-
 Um Objeto distribui comunicação entre dois ou mais objetos.
 Desacopla e gerencia as comunicações entre um grupo de objetos.
 Unificação da interface de um sistema.
@@ -134,10 +133,9 @@ objeto que representa o Botão apertado (BtnView por ex.), que por sua vez, chama
 (daquele único objeto mediador existente e que conhece este e todos os botões), e trabalha
 com a sua referência armazenada de BtnView e alternativamente, faz modificações nos outros
 objetos também (como alternar flags).
+
+Memento
 --------------
-
-MEMENTO
-
 Memento é um padrão de projeto que permite armazenar o estado interno de um objeto em um
 determinado momento, para que seja possível retorná-lo a este estado, caso necessário.
 É análogo à uma serialização.
@@ -166,7 +164,7 @@ atribuindo-se então, os mesmos atributos anteriormente salvos em Memento, recupe
 portanto em Originator.
 
 
-VISITOR
+Visitor
 ----------------
 Operações que podem ser aplicadas a objetos sem mudar suas classes.
 
