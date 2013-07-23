@@ -179,7 +179,7 @@ Ao invés de criar "print()" em cada subclasse de Elemento (Wheel, Engine, Body, 
 o código de impressão espalhado, uma única classe Visitante [CarElementPrintVisitor] efetua a
 ação de impressão requisitada.
 
-Excencial: 
+Essencial: 
 1 - Os tipos corretos de Elemento (definidos em runtime/polimorfismo) [e.g Wheels] delegam algumas 
 ações [elemento.accept(:Visitor)] para o tipo correto Visitor.
 
