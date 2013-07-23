@@ -67,6 +67,7 @@ da interface implementada por cada ação.
 
 -----------------
 Patterns da Wikipedia
+-----------------
 
 Command
 -----------
