@@ -1,9 +1,14 @@
 Algumas observações pessoais sobre cada um dos Patterns.
 
-Strategy - Polimorfismo; Qualquer objeto de um mesmo tipo (Imposto), pode ser
+--------------
+
+Strategy
+----------
+Polimorfismo; Qualquer objeto de um mesmo tipo (Imposto), pode ser
 passado como parâmetro de um método, e utilizado dentro desde método pela mesma
 chamada (ex. imposto.calcula(blah)).
-------------
+
+--------------
 
 Chain Of Responsability - Uma chamada a um método, desencadeia a chamada à vários
 métodos de vários objetos de um mesmo tipo até um deles retornar true. A ordem
@@ -53,7 +58,7 @@ da interface implementada por cada ação.
 
 -----------------
 Patterns da Wikipedia
-COMMAND
+COMMAND.
 
 Um objeto encapsula toda necessidade para executar um método em outro objeto.
 No exemplo:
