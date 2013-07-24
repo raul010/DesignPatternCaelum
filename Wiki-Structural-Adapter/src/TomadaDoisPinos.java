@@ -1,0 +1,4 @@
+
+interface TomadaDoisPinos {
+	void fornecerEnergiaFraca();
+}

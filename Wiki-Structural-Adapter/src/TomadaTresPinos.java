@@ -1,0 +1,4 @@
+
+interface TomadaTresPinos {
+	void fornecerEnergiaForte();
+}
