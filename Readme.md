@@ -285,4 +285,11 @@ Quando utiliza o framework Spring, por exemplo, um desenvolvedor pode configurar
 instância diferente. O comportamento padrão, ou singleton, define que todas as referências a um 
 JavaBean apontem para a mesma instância de uma classe.
 
+Singleton
+-----------
+Muitos projetos necessitam que algumas classes tenham apenas uma instância. Por exemplo, em uma 
+aplicação que precisa de uma infraestrutura de log de dados, pode-se implementar uma classe no 
+padrão singleton. Desta forma existe apenas um objeto responsável pelo log em toda a aplicação 
+que é acessível unicamente através da classe singleton.
+
 
