@@ -292,4 +292,11 @@ aplicação que precisa de uma infraestrutura de log de dados, pode-se implementar
 padrão singleton. Desta forma existe apenas um objeto responsável pelo log em toda a aplicação 
 que é acessível unicamente através da classe singleton.
 
+Adapter
+------------
+Adapter, também conhecido como Wrapper, é um padrão de projeto de software (do inglês design pattern).
 
+Este padrão é utilizado para 'adaptar' a interface de uma classe. O Adapter permite que classes com 
+interfaces incompatíveis possam interagir.
+
+Adapter permite que um objeto cliente utilize serviços de outros objetos com interfaces diferentes por meio de uma interface única.
