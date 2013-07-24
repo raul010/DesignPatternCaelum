@@ -253,3 +253,7 @@ o Abstract Factory quer que você tenha algo diferente;
 - O fato de todos os métodos de criação estarem na mesma subclasse de uma Abstract Factory permite 
 satisfazer a restrição de criar apenas objetos relacionados ou dependentes.
 
+Prototype
+---------
+
+
