@@ -7,6 +7,7 @@ public class PrototypeTest {
  
                 for (int i = 1; i < 10; i++) {
                         Prototype tempotype =  prototype.clone();
+                        System.out.println(tempotype.toString());
  
                         // Usage of values in protOtype to derive a new value.
                         tempotype.setX( tempotype.getX() * i);

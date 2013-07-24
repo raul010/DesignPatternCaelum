@@ -255,5 +255,34 @@ satisfazer a restrição de criar apenas objetos relacionados ou dependentes.
 
 Prototype
 ---------
+Contém os seguintes elementos:
+
+- prototype — uma classe que declara uma interface para objetos capazes de clonar a si mesmo;
+- prototype concreto — implementação de um prototype;
+- cliente — cria um novo objeto através de um prototype que é capaz de clonar a si mesmo.
+
+O padrão Prototype exige a implementação de uma operação de clonagem em cada uma das classes 
+concretas do protótipo. Esta tarefa pode ser inconveniente, no caso do reaproveitamento de classes
+pré-existentes que não possuem tal operação, ou mesmo complexa, se for considerada a possibilidade
+de existirem referências circulares nos atributos de um objeto (um objeto possui um atributo que
+referência um objeto que, por sua vez, referência o objeto original). 
+
+Utilização
+
+O padrão Prototype pode ser utilizado em sistemas que precisam ser independentes da forma como
+os seus componentes são criados, compostos e representados. O padrão Prototype pode ser útil em
+sistemas com as seguintes características:
+
+- sistemas que utilizam classes definidas em tempo de execução;
+- sistemas que utilizam o padrão Abstract Factory para criação de objetos. Neste caso, a hierarquia
+de classes pode se tornar muito complexa e o padrão Prototype pode ser uma alternativa mais 
+simples, por realizar a mesma tarefa com um número reduzido de classes;
+- sistemas que possuem componentes cujo estado inicial possui poucas variações e onde é conveniente
+disponibilizar um conjunto pré-estabelecido de protótipos que dão origem aos objetos que compõem
+o sistema.
+Quando utiliza o framework Spring, por exemplo, um desenvolvedor pode configurar um JavaBean como
+"prototype". Esta configuração faz com que cada uma das referências a um JavaBean aponte para uma
+instância diferente. O comportamento padrão, ou singleton, define que todas as referências a um 
+JavaBean apontem para a mesma instância de uma classe.
 
 
