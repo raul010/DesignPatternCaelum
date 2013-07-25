@@ -332,3 +332,12 @@ Flyweight é um padrão de projeto de software apropriado quando vários objetos de
 
 Um exemplo é o processador de texto. Cada caractere representa um objeto que possui uma família de fonte, um tamanho de fonte e outras informações sobre o símbolo. Como imaginado, um documento grande com tal estrutura de dados facilmente ocuparia toda a memória disponível no sistema. Para resolver o problema, como muitas dessas informações são repetidas, o flyweight é usado para reduzir os dados. Cada objeto de caractere contém uma referência para outro objeto com suas respectivas propriedades.
 
+Proxy
+----------------
+Em programação, o padrão proxy é um padrão de projeto de software.
+
+Um proxy, em sua forma mais geral, é uma classe que funciona como uma interface para outra classe. A classe proxy poderia conectar-se a qualquer coisa: uma conexão de rede, um objeto grande em memória, um arquivo, ou algum recurso que é difícil ou impossível de ser duplicado.
+
+Um exemplo bem conhecido do padrão proxy é um objeto ponteiro de referência de contagem.
+
+Em situações em que múltiplas cópias de um objeto complexo deve existir o padrão proxy pode ser adaptado para incorporar o padrão flyweight a fim de reduzir o rastro de memória das aplicações. Normalmente uma instância de um objeto complexo é criada e vários objetos proxies são criados, todos contendo uma referência ao único objeto complexo original. Quaisquer operações realizadas nos proxies são enviadas ao objeto original. Uma vez que todas as instâncias do proxy estiverem fora do escopo, a memória do objeto complexo pode ser desalocada.
