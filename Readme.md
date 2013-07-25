@@ -315,3 +315,13 @@ Composite é um padrão de projeto de software utilizado para representar um objet
 
 O padrão composite é normalmente utilizado para representar listas recorrentes - ou recursivas - de elementos. Além disso, esta forma de representar elementos compostos em uma hierarquia de classes permite que os elementos contidos em um objeto composto sejam tratados como se fossem um único objeto. Desta forma, todos os métodos comuns às classes que representam objetos atômicos da hierarquia poderão ser aplicáveis também ao conjunto de objetos agrupados no objeto composto.
 
+Façade
+----------------
+Em padrões de projeto de software, um façade (fachada em francês) é um objeto que disponibiliza uma interface simplificada para uma das funcionalidades de uma API, por exemplo. Um façade pode:
+
+- tornar uma biblioteca de software mais fácil de entender e usar;
+- tornar o código que utiliza esta biblioteca mais fácil de entender;
+- reduzir as dependências em relação às características internas de uma biblioteca, trazendo flexibilidade no desenvolvimento do sistema;
+- envolver uma interface mal desenhada, com uma interface melhor definida.
+
+Um façade é um padrão de projeto (design pattern) do tipo estrutural. Os façades são muito comuns em projeto orientados a objeto. Por exemplo, a biblioteca padrão da linguagem Java contém dúzias de classes para processamento do arquivo fonte de um caractere, geração do seu desenho geométrico e dos pixels que formam este caractere. Entretanto, a maioria dos programadores Java não se preocupam com esses detalhes, pois a biblioteca contém as classes do tipo façade (Font e Graphics) que oferecem métodos simples para as operações relacionadas com fontes.
