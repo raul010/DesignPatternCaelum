@@ -1,4 +1,0 @@
-
-interface Image {
-	void displayImage();
-}

@@ -1,4 +1,43 @@
-######Algumas observações pessoais sobre cada um dos Patterns.
+
+###Legenda:
+
+- B - Behavioural / Comportamental
+
+- C - Criacional / Criacional
+
+- S - Structural / Estrutural
+
+--------
+
+######Explicações e observações pessoais sobre cada um dos Patterns.
+
+Objetivos 
+----------
+###Factory Method
+
+Encapsular a escolha da classe concreta a ser utilizada na criação de objetos de um de-terminado tipo.
+
+### Abstract Factory 
+Encapsular a escolha das classes concretas a serem utilizadas na criação dos obje-tos de diversas famílias.
+
+###Builder
+
+Separar o processo de construção de um objeto de sua representação e permitir a sua cri-ação passo-a-passo. Diferentes tipos de objetos podem ser criados com implementações dis-tintas de cada passo.
+
+###Prototype 
+
+Possibilitar a criação de novos objetos a partir da cópia de objetos existentes.
+
+###Singleton 
+
+Permitir a criaçãodeumaúnica instânciadeuma classee fornecer ummodopara recuperá-la.
+
+###Multiton 
+
+Permitir a criação de uma quantidade limitada de instâncias de determinada classe e for-necer ummodo para recuperá-las.
+
+###Object Pool 
+Possibilitar o reaproveitamento de objetos.
 
 Strategy
 ----------
