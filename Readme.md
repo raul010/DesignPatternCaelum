@@ -325,3 +325,10 @@ Em padrões de projeto de software, um façade (fachada em francês) é um objeto qu
 - envolver uma interface mal desenhada, com uma interface melhor definida.
 
 Um façade é um padrão de projeto (design pattern) do tipo estrutural. Os façades são muito comuns em projeto orientados a objeto. Por exemplo, a biblioteca padrão da linguagem Java contém dúzias de classes para processamento do arquivo fonte de um caractere, geração do seu desenho geométrico e dos pixels que formam este caractere. Entretanto, a maioria dos programadores Java não se preocupam com esses detalhes, pois a biblioteca contém as classes do tipo façade (Font e Graphics) que oferecem métodos simples para as operações relacionadas com fontes.
+
+Flyweight
+-----------------
+Flyweight é um padrão de projeto de software apropriado quando vários objetos devem ser manipulados, e esses não suportam dados adicionais. No padrão flyweight não existem ponteiros para os métodos do dado, pois isto consome muita memória. Em contrapartida são chamadas sub-rotinas diretamente para acessar o dado.
+
+Um exemplo é o processador de texto. Cada caractere representa um objeto que possui uma família de fonte, um tamanho de fonte e outras informações sobre o símbolo. Como imaginado, um documento grande com tal estrutura de dados facilmente ocuparia toda a memória disponível no sistema. Para resolver o problema, como muitas dessas informações são repetidas, o flyweight é usado para reduzir os dados. Cada objeto de caractere contém uma referência para outro objeto com suas respectivas propriedades.
+

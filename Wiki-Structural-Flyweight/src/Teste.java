@@ -1,57 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
 
-// Flyweight object interface
-interface CoffeeOrder {
-    void serveCoffee(CoffeeOrderContext context);
-}
-// ConcreteFlyweight object that creates ConcreteFlyweight 
-class CoffeeFlavor implements CoffeeOrder {
-    private String flavor;
- 
-    public CoffeeFlavor(String newFlavor) {
-        this.flavor = newFlavor;
-    }
- 
-    public String getFlavor() {
-        return this.flavor;
-    }
- 
-    public void serveCoffee(CoffeeOrderContext context) {
-        System.out.println("Serving Coffee flavor " + flavor + " to table number " + context.getTable());
-    }
-}
- 
-class CoffeeOrderContext {
-   private int tableNumber;
- 
-   public CoffeeOrderContext(int tableNumber) {
-       this.tableNumber = tableNumber;
-   }
- 
-   public int getTable() {
-       return this.tableNumber;
-   }
-}
- 
-//FlyweightFactory object
-class CoffeeFlavorFactory {
-    private Map<String, CoffeeFlavor> flavors = new HashMap<String, CoffeeFlavor>();
- 
-    CoffeeFlavor getCoffeeFlavor(String flavorName) {
-        CoffeeFlavor flavor = flavors.get(flavorName);
-        if (flavor == null) {
-            flavor = new CoffeeFlavor(flavorName);
-            flavors.put(flavorName, flavor);
-        }
-        return flavor;
-    }
- 
-    public int getTotalCoffeeFlavorsMade() {
-        return flavors.size();
-    }
-}
- 
 public class Teste {
    /** The flavors ordered. */
    private static CoffeeFlavor[] flavors = new CoffeeFlavor[100];
@@ -84,7 +31,7 @@ public class Teste {
        takeOrders("Cappuccino", 121);
        takeOrders("Xpresso", 121);
  
-       for (int i = 0; i < ordersMade; ++i) {
+       for (int i = 0; i < ordersMade; i++) {
            flavors[i].serveCoffee(tables[i]);
        }
        System.out.println(" ");
