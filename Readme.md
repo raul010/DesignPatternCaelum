@@ -15,14 +15,14 @@ Objetivos
 ----------
 ###Factory Method
 
-Encapsular a escolha da classe concreta a ser utilizada na criação de objetos de um de-terminado tipo.
+Encapsular a escolha da classe concreta a ser utilizada na criação de objetos de um determinado tipo.
 
 ### Abstract Factory 
-Encapsular a escolha das classes concretas a serem utilizadas na criação dos obje-tos de diversas famílias.
+Encapsular a escolha das classes concretas a serem utilizadas na criação dos objetos de diversas famílias.
 
 ###Builder
 
-Separar o processo de construção de um objeto de sua representação e permitir a sua cri-ação passo-a-passo. Diferentes tipos de objetos podem ser criados com implementações dis-tintas de cada passo.
+Separar o processo de construção de um objeto de sua representação e permitir a sua criação passo-a-passo. Diferentes tipos de objetos podem ser criados com implementações dis-tintas de cada passo.
 
 ###Prototype 
 
@@ -34,7 +34,7 @@ Permitir a criaçãodeumaúnica instânciadeuma classee fornecer ummodopara recuperá
 
 ###Multiton 
 
-Permitir a criação de uma quantidade limitada de instâncias de determinada classe e for-necer ummodo para recuperá-las.
+Permitir a criação de uma quantidade limitada de instâncias de determinada classe e fornecer ummodo para recuperá-las.
 
 ###Object Pool 
 Possibilitar o reaproveitamento de objetos.
@@ -277,7 +277,13 @@ tipo exato de objeto criar e retornar.
 cliente saiba;
 - Permite estender a funcionalidade através da construção de subclasses sem afetar os clientes.
 
+Related patterns include
 
+- Abstract Factory, que é uma camada acima que um Factory Method;
+- Template method, que define um esqueleto do algorítmo para adiar alguns passos da subclasse,
+ou evitar subclasses;
+- Prototype, que cria um novo objeto copiando uma instância, portanto, reduzindo as subclasses;
+- Singleton, que faz com que o retorno do factory method, seja único.
 
 ###Diferenças do Abstract Factory para o Factory Method
 
@@ -380,3 +386,6 @@ Um proxy, em sua forma mais geral, é uma classe que funciona como uma interface 
 Um exemplo bem conhecido do padrão proxy é um objeto ponteiro de referência de contagem.
 
 Em situações em que múltiplas cópias de um objeto complexo deve existir o padrão proxy pode ser adaptado para incorporar o padrão flyweight a fim de reduzir o rastro de memória das aplicações. Normalmente uma instância de um objeto complexo é criada e vários objetos proxies são criados, todos contendo uma referência ao único objeto complexo original. Quaisquer operações realizadas nos proxies são enviadas ao objeto original. Uma vez que todas as instâncias do proxy estiverem fora do escopo, a memória do objeto complexo pode ser desalocada.
+
+http://www.javacamp.org/designPattern/
+http://en.wikipedia.org/wiki/Template:Design_Patterns_patterns
