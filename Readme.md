@@ -11,8 +11,12 @@
 
 ######Explicações e observações pessoais sobre cada um dos Patterns.
 
-Objetivos 
+OBJETIVOS
 ----------
+
+Criacional
+----------
+
 ###Factory Method
 
 Encapsular a escolha da classe concreta a ser utilizada na criação de objetos de um determinado tipo.
@@ -39,6 +43,44 @@ Permitir a criação de uma quantidade limitada de instâncias de determinada class
 ###Object Pool 
 Possibilitar o reaproveitamento de objetos.
 
+Estrutural
+----------
+
+###Adapter 
+
+Permitir que um objeto seja substituído por outro que, apesar de realizar a mesma tarefa,
+possui uma interface diferente.
+
+###Bridge 
+
+Separar uma abstração de sua representação, de forma que ambos possam variar e produzir
+tipos de objetos diferentes.
+
+###Composite 
+
+Agrupar objetos que fazem parte de uma relação parte-todo de forma a tratá-los sem
+distinção.
+
+###Decorator 
+
+Adicionar funcionalidade a um objeto dinamicamente.
+
+###Facade 
+
+Prover uma interface simplificada para a utilização de várias interfaces de um subsistema.
+
+###Front Controller 
+
+Centralizar todas as requisições a uma aplicação Web.
+
+###Flyweight 
+
+Compartilhar, de forma eficiente, objetos que são usados em grande quantidade.
+
+###Proxy 
+
+Controlar as chamadas a um objeto através de outro objeto de mesma interface.
+
 Strategy
 ----------
 Polimorfismo; Qualquer objeto de um mesmo tipo (Imposto), pode ser
@@ -59,16 +101,6 @@ Vários objetos de um mesmo tipo, têm o mesmo algorítimo
 implementará uma máscara, que possui 'buracos' que são os métodos implementados na
 classe filho.
 
-Decorator 
-------------
-Alguns objetos podem ser compostos. Ou seja, usar a funcionalidade de
-outro objeto do mesmo tipo. É passado um segundo objeto (decorador), na construção
-de um objeto. Este segundo objeto, é armazenado no atributo da classe pai 
-(ImpostoComposto). O pai, além de armazenar este segundo objeto em seu atributo,
-também possui um método que será chamado pelo filho (de dentro do método calcula())
-que verifica se o atributo não é null, ou seja, se possui um objeto composto e caso 
-exista ele chamará o método (calcula()) deste objeto composto, caso contrário, retornará 
-um valor padrão (0 no caso).
 
 State
 -------------
@@ -87,6 +119,27 @@ metodos flutuantes para facilitar a leitura da construção. Haverá um pojo
 (NotaFiscal), uma classe - intermediária - construtora (ContrutorNotaFiscal), que
 por sua vez, trata todos os atributos recebidos através da "construção facilitada"
 e por final, repassa ao pojo (NotaFiscal).
+
+No outro exemplo:
+
+- Product (Boleto)
+Define os objetos que devemser construídos pelos Builders.
+
+- Builder (BoletoBuilder)
+Interface que define os passos para a criação de um produto.
+
+- ConcreteBuilder (BBBoletoBuilder, ItauBoletoBuilder, BradescoBoletoBuilder)
+Constrói um produto específico implementando a interface Builder.
+
+- Director (GeradorDeBoleto)
+Aciona osmétodo de um Builder para construir um produto
+
+Pattern Relacionados:
+
+- Abstract Factory, que foca na camada do factory pattern (podendo ser simples ou complexo),
+enquanto um builder pattern foca na construção de um objeto complexo de outros objetos simples.
+
+- Composite, que é frequentemente usado para construir um objeto complexo.
 
 Observer 
 ---------------
@@ -339,12 +392,27 @@ Quando utiliza o framework Spring, por exemplo, um desenvolvedor pode configurar
 instância diferente. O comportamento padrão, ou singleton, define que todas as referências a um 
 JavaBean apontem para a mesma instância de uma classe.
 
+Patterns Relacionados:
+
+- Abstract Factory, que é frequentemente usado junto com Prototype. Um Abstract Factory pode
+armazenar alguns prototypes para clonar objetos e retorná-los.
+- Composite, que é frequentemente usado com Prototypes criando um relacionamento parte-todo.
+- Decorator, que é usado para adicionar funcionalidades adicionais ao Prototype.
+
 Singleton
 -----------
 Muitos projetos necessitam que algumas classes tenham apenas uma instância. Por exemplo, em uma 
 aplicação que precisa de uma infraestrutura de log de dados, pode-se implementar uma classe no 
 padrão singleton. Desta forma existe apenas um objeto responsável pelo log em toda a aplicação 
 que é acessível unicamente através da classe singleton.
+
+Patterns Relacionados:
+
+- Abstract factory, que é frequentemente usado para retornar objetos únicos.
+- Builder, que é usado para construir um objeto complexo, enquanto que um Singleton é usado
+para criar um objeto acessível globalmente.
+- Prototype, que é suado para copiar um objeto, ou criar um objeto deste protótipo, enquanto um
+Singleton é usado para certificar-se que apenas um protótipo será garantido.
 
 Adapter
 ------------
@@ -355,6 +423,16 @@ interfaces incompatíveis possam interagir.
 
 Adapter permite que um objeto cliente utilize serviços de outros objetos com interfaces diferentes por meio de uma interface única.
 
+Patterns Relacionados:
+
+- Proxy, que fornece a mesma interface como seu objeto, enquanto que um adapter fornece uma 
+interfate difrente para o objeto que se adapta.
+- Decorator, qie foca na adição de novas funções para um objeto, enquanto que um Adapter
+coordena dois objetos diferentes.
+- Bridge, que tenta separar uma interface de sua implementação, e faz um objeto variar 
+independentemente, enquanto um Adapter tenta alterar e cooperar a interface de um objeto.
+
+
 Bridge
 --------------
 Bridge é um padrão de projeto de software, ou design pattern em inglês, utilizado quando é desejável que uma interface (abstração) possa variar independentemente das suas implementações.
@@ -363,11 +441,49 @@ Imagine um sistema gráfico de janelas que deve ser portável para diversas plataf
 
 Através do padrão Bridge, a hierarquia que define os tipos de janelas é separada da hierarquia que contém a implementação. Desta forma todas as operações de Janela são abstratas e suas implementações são escondidas dos clientes.
 
+Patterns Relacionados:
+
+- Abstract Factory, que pode ser usado para cirar e configurar um Bridge particular.
+- Adapter, que classes não-relacionadas trabalhem juntas, sendo que Bridge faz um "clear-cut" entre abstração e implementação.
+
 Composite
 ---------------
 Composite é um padrão de projeto de software utilizado para representar um objeto que é constituído pela composição de objetos similares a ele. Neste padrão, o objeto composto possui um conjunto de outros objetos que estão na mesma hierarquia de classes a que ele pertence.
 
 O padrão composite é normalmente utilizado para representar listas recorrentes - ou recursivas - de elementos. Além disso, esta forma de representar elementos compostos em uma hierarquia de classes permite que os elementos contidos em um objeto composto sejam tratados como se fossem um único objeto. Desta forma, todos os métodos comuns às classes que representam objetos atômicos da hierarquia poderão ser aplicáveis também ao conjunto de objetos agrupados no objeto composto.
+
+Pattern Relacionados:
+
+- Decorator, que é frequentemente usado com Composite Pattern e com a mesma super classe.
+- Flyweight, que é frequentemente usado com Composite Pattern para compartilhar componentes.
+- Iterator, que é usado para percorrer os compostos.
+- Visitor, que localiza operações entre as classes Composite e Leaf.
+
+
+Decorator 
+------------
+Alguns objetos podem ser compostos. Ou seja, usar a funcionalidade de
+outro objeto do mesmo tipo. É passado um segundo objeto (decorador), na construção
+de um objeto. Este segundo objeto, é armazenado no atributo da classe pai 
+(ImpostoComposto). O pai, além de armazenar este segundo objeto em seu atributo,
+também possui um método que será chamado pelo filho (de dentro do método calcula())
+que verifica se o atributo não é null, ou seja, se possui um objeto composto e caso 
+exista ele chamará o método (calcula()) deste objeto composto, caso contrário, retornará 
+um valor padrão (0 no caso).
+
+Patterns Relacionados:
+
+- Adapter pattern, que fornece uma interface diferente de objeto que adapta, enquanto um Decorator, 
+altera as responsalidades de um objeto.
+- Proxy pattern, que controla o acesso para o objeto, enquanto o Decorator foca na adição de novas
+funcionalidades de um objeto.
+- Composite pattern, que agrega um objeto, enquanto um Decorator adiciona resposabilidades para um
+objeto.
+- Strategy pattern, que muda as entranhas do objeto, enquanto um decorator muda o 'skin' de um 
+objeto.
+- Facade pattern, que fornece uma forma de esconder uma classe complexa, enquanto um decorator
+adiciona função envolvendo uma classe;
+
 
 Façade
 ----------------
@@ -379,6 +495,14 @@ Em padrões de projeto de software, um façade (fachada em francês) é um objeto qu
 - envolver uma interface mal desenhada, com uma interface melhor definida.
 
 Um façade é um padrão de projeto (design pattern) do tipo estrutural. Os façades são muito comuns em projeto orientados a objeto. Por exemplo, a biblioteca padrão da linguagem Java contém dúzias de classes para processamento do arquivo fonte de um caractere, geração do seu desenho geométrico e dos pixels que formam este caractere. Entretanto, a maioria dos programadores Java não se preocupam com esses detalhes, pois a biblioteca contém as classes do tipo façade (Font e Graphics) que oferecem métodos simples para as operações relacionadas com fontes.
+
+Patterns Relacionados:
+
+- Abstract Factory, que é frequentemente usado para criar uma interface para um subsistema de uma
+forma independente, e pode ser usado com uma maneira alternativa ao Façade.
+- Singleton, que é frequentemente usado com um Façade.
+- Mediator, que é similar ao Façade, mas um Façade não define novas funcionalidades à um subsistema.
+
 
 Flyweight
 -----------------

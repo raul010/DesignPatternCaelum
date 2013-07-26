@@ -1,8 +1,5 @@
 package k19.testes;
 
-import k19.concreteproduct.EmissorEmail;
-import k19.concreteproduct.EmissorJMS;
-import k19.concreteproduct.EmissorSMS;
 import k19.creator.EmissorCreator;
 import k19.product.Emissor;
 
