@@ -261,9 +261,18 @@ seu método deverá ser chamado [factory|:OSXFactory|.createButton()].
 É retornado, portanto, para Application, a referência concreta do tipo Button, no caso OSXButton,
 que então chama o método de OSXButton.
 
+Patterns Relacionados:
+
+- Factory method, que é frequentemente implementado com um Abstract Factory.
+- Singleton, que é frequentemente implementado com um Abstract Factory.
+- Prototype, que é frequentemente implementado com um Abstract Factory.
+- Façade, que frequentemente usado com um Abstract Factory, por fornecer uma interface para
+criação implementado classe.
+
 Factory Method
 ---------------
 http://www.dsc.ufcg.edu.br/~jacques/cursos/map/html/pat/factory.htm
+
 Define uma interface para criar objetos de forma a deixar subclasses decidirem qual classe
 instanciar.
 Factory Method deixa que subclasses façam a instanciação.
@@ -277,7 +286,7 @@ tipo exato de objeto criar e retornar.
 cliente saiba;
 - Permite estender a funcionalidade através da construção de subclasses sem afetar os clientes.
 
-Related patterns include
+Patterns Relacionados:
 
 - Abstract Factory, que é uma camada acima que um Factory Method;
 - Template method, que define um esqueleto do algorítmo para adiar alguns passos da subclasse,
