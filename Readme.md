@@ -229,9 +229,8 @@ objetos também (como alternar flags).
 
 Memento
 --------------
-Memento é um padrão de projeto que permite armazenar o estado interno de um objeto em um
-determinado momento, para que seja possível retorná-lo a este estado, caso necessário.
-É análogo à uma serialização.
+Memento permite armazenar o estado interno de um objeto em um determinado momento, para que 
+seja possível retorná-lo a este estado, caso necessário. É análogo à uma serialização.
 
 ######No exemplo:
 1 - É criado uma lista do objeto [Memento] com, pelo menos, os mesmos atributos do objeto 
@@ -416,10 +415,8 @@ Singleton é usado para certificar-se que apenas um protótipo será garantido.
 
 Adapter
 ------------
-Adapter, também conhecido como Wrapper, é um padrão de projeto de software (do inglês design pattern).
-
-Este padrão é utilizado para 'adaptar' a interface de uma classe. O Adapter permite que classes com 
-interfaces incompatíveis possam interagir.
+Adapter, também conhecido como Wrapper, é utilizado para 'adaptar' a interface de uma classe.
+O Adapter permite que classes com interfaces incompatíveis possam interagir.
 
 Adapter permite que um objeto cliente utilize serviços de outros objetos com interfaces diferentes por meio de uma interface única.
 
@@ -435,7 +432,7 @@ independentemente, enquanto um Adapter tenta alterar e cooperar a interface de u
 
 Bridge
 --------------
-Bridge é um padrão de projeto de software, ou design pattern em inglês, utilizado quando é desejável que uma interface (abstração) possa variar independentemente das suas implementações.
+Bridge é utilizado quando é desejável que uma interface (abstração) possa variar independentemente das suas implementações.
 
 Imagine um sistema gráfico de janelas que deve ser portável para diversas plataformas. Neste sistema são encontrados diversos tipos de janelas, como ícones, diálogos, etc. Estas janelas formam uma hierarquia que contém uma abstração das janelas (classe base). Normalmente, a portabilidade seria obtida criando-se especializações dos tipos de janelas para cada uma das plataformas suportadas. O problema com essa solução reside na complexidade da hierarquia gerada e na dependência de plataforma que existirá nos clientes do sistema.
 
@@ -448,7 +445,7 @@ Patterns Relacionados:
 
 Composite
 ---------------
-Composite é um padrão de projeto de software utilizado para representar um objeto que é constituído pela composição de objetos similares a ele. Neste padrão, o objeto composto possui um conjunto de outros objetos que estão na mesma hierarquia de classes a que ele pertence.
+Composite é utilizado para representar um objeto que é constituído pela composição de objetos similares a ele. Neste padrão, o objeto composto possui um conjunto de outros objetos que estão na mesma hierarquia de classes a que ele pertence.
 
 O padrão composite é normalmente utilizado para representar listas recorrentes - ou recursivas - de elementos. Além disso, esta forma de representar elementos compostos em uma hierarquia de classes permite que os elementos contidos em um objeto composto sejam tratados como se fossem um único objeto. Desta forma, todos os métodos comuns às classes que representam objetos atômicos da hierarquia poderão ser aplicáveis também ao conjunto de objetos agrupados no objeto composto.
 
@@ -487,7 +484,7 @@ adiciona função envolvendo uma classe;
 
 Façade
 ----------------
-Em padrões de projeto de software, um façade (fachada em francês) é um objeto que disponibiliza uma interface simplificada para uma das funcionalidades de uma API, por exemplo. Um façade pode:
+Um façade (fachada em francês) é um objeto que disponibiliza uma interface simplificada para uma das funcionalidades de uma API, por exemplo. Um façade pode:
 
 - tornar uma biblioteca de software mais fácil de entender e usar;
 - tornar o código que utiliza esta biblioteca mais fácil de entender;
@@ -521,13 +518,18 @@ um Flyweight baseia-se em tal Strategy.
 
 Proxy
 ----------------
-Em programação, o padrão proxy é um padrão de projeto de software.
-
 Um proxy, em sua forma mais geral, é uma classe que funciona como uma interface para outra classe. A classe proxy poderia conectar-se a qualquer coisa: uma conexão de rede, um objeto grande em memória, um arquivo, ou algum recurso que é difícil ou impossível de ser duplicado.
 
 Um exemplo bem conhecido do padrão proxy é um objeto ponteiro de referência de contagem.
 
 Em situações em que múltiplas cópias de um objeto complexo deve existir o padrão proxy pode ser adaptado para incorporar o padrão flyweight a fim de reduzir o rastro de memória das aplicações. Normalmente uma instância de um objeto complexo é criada e vários objetos proxies são criados, todos contendo uma referência ao único objeto complexo original. Quaisquer operações realizadas nos proxies são enviadas ao objeto original. Uma vez que todas as instâncias do proxy estiverem fora do escopo, a memória do objeto complexo pode ser desalocada.
+
+Patterns relacionados:
+
+- Adapter, que fornece uma interface diferente para o objeto que se adapta, enquanto um Proxy fornece
+a mesma interface como seu objeto.
+- Decorator, que foca na adição de novas funcionalidades para um objeto, enquanto um Proxy controla
+acesso para o objeto.
 
 http://www.javacamp.org/designPattern/
 http://en.wikipedia.org/wiki/Template:Design_Patterns_patterns
