@@ -510,6 +510,15 @@ Flyweight é um padrão de projeto de software apropriado quando vários objetos de
 
 Um exemplo é o processador de texto. Cada caractere representa um objeto que possui uma família de fonte, um tamanho de fonte e outras informações sobre o símbolo. Como imaginado, um documento grande com tal estrutura de dados facilmente ocuparia toda a memória disponível no sistema. Para resolver o problema, como muitas dessas informações são repetidas, o flyweight é usado para reduzir os dados. Cada objeto de caractere contém uma referência para outro objeto com suas respectivas propriedades.
 
+Patterns Relacionados:
+
+- Composite, que suporta estruturas recursivas (encadeadas), enquanto um Flyweight é frequentemente aplicado nele.
+- Factory Method, que produz objeto específico sobre requerimento, enquanto um  Flyweight utiliza-os para reduzir objetos.
+- State, que permite um objeto alterar seu comportamento quando seu estado interno é alterado, enquanto um Flyweight 
+é melhor implmentado nele.
+- Strategy, que permite que um algorítmo varie independentemente para alternar suas necessidades, enquanto
+um Flyweight baseia-se em tal Strategy.
+
 Proxy
 ----------------
 Em programação, o padrão proxy é um padrão de projeto de software.
