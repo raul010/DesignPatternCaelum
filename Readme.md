@@ -34,11 +34,11 @@ Possibilitar a criação de novos objetos a partir da cópia de objetos existentes.
 
 ###Singleton 
 
-Permitir a criaçãodeumaúnica instânciadeuma classee fornecer ummodopara recuperá-la.
+Permitir a criação de uma única instância de uma classe e fornecer um modo para recuperá-la.
 
 ###Multiton 
 
-Permitir a criação de uma quantidade limitada de instâncias de determinada classe e fornecer ummodo para recuperá-las.
+Permitir a criação de uma quantidade limitada de instâncias de determinada classe e fornecer um modo para recuperá-las.
 
 ###Object Pool 
 Possibilitar o reaproveitamento de objetos.
@@ -115,7 +115,7 @@ ou lançar uma Runtime, de acordo com o estado atual.
 Builder
 ------------
 Permite criar objetos complexos com maior facilidade. Pode usar os 
-metodos flutuantes para facilitar a leitura da construção. Haverá um pojo 
+métodos flutuantes para facilitar a leitura da construção. Haverá um pojo 
 (NotaFiscal), uma classe - intermediária - construtora (ContrutorNotaFiscal), que
 por sua vez, trata todos os atributos recebidos através da "construção facilitada"
 e por final, repassa ao pojo (NotaFiscal).
@@ -123,7 +123,7 @@ e por final, repassa ao pojo (NotaFiscal).
 No outro exemplo:
 
 - Product (Boleto)
-Define os objetos que devemser construídos pelos Builders.
+Define os objetos que devem ser construídos pelos Builders.
 
 - Builder (BoletoBuilder)
 Interface que define os passos para a criação de um produto.
@@ -132,7 +132,7 @@ Interface que define os passos para a criação de um produto.
 Constrói um produto específico implementando a interface Builder.
 
 - Director (GeradorDeBoleto)
-Aciona osmétodo de um Builder para construir um produto
+Aciona o método de um Builder para construir um produto
 
 Pattern Relacionados:
 
@@ -141,15 +141,6 @@ enquanto um builder pattern foca na construção de um objeto complexo de outros o
 
 - Composite, que é frequentemente usado para construir um objeto complexo.
 
-Observer 
----------------
-Um objeto notifica outro, se ouver alterações neste. 
-Na construção do Builder, pode-se definir serviços à serem executados
-ao final da construção. No momento da construção, é passado um objeto implementador
-da interface ExecutaAcao como parâmetro do método à classe construtora
-(ConstrutorNotaFiscal), que a recebe e inclui numa lista. Esta lista é iterada no
-mesmo método que constrói a NotaFiscal, e cada iteração, chamado o método executa
-da interface implementada por cada ação.
 
 -----------------
 
@@ -234,6 +225,23 @@ objeto que representa o Botão apertado (BtnView por ex.), que por sua vez, chama
 (daquele único objeto mediador existente e que conhece este e todos os botões), e trabalha
 com a sua referência armazenada de BtnView e alternativamente, faz modificações nos outros
 objetos também (como alternar flags).
+
+
+Observer 
+---------------
+Um objeto notifica outro, se houver alterações neste. 
+Na construção do Builder, pode-se definir serviços à serem executados
+ao final da construção. No momento da construção, é passado um objeto implementador
+da interface ExecutaAcao como parâmetro do método à classe construtora
+(ConstrutorNotaFiscal), que a recebe e inclui numa lista. Esta lista é iterada no
+mesmo método que constrói a NotaFiscal, e cada iteração, chamado o método executa
+da interface implementada por cada ação.
+
+Patterns Relacionados:
+
+- Singleton,  que é usado para fazer objetos observáveis únicos e globalmente acessíveis.
+- Mediator, que é usado para encapsular objetos atualizados.
+
 
 Memento
 --------------
@@ -337,7 +345,7 @@ Define uma interface para criar objetos de forma a deixar subclasses decidirem q
 instanciar.
 Factory Method deixa que subclasses façam a instanciação.
 
-A idéia é simples: em vez de um cliente que precisa de um objeto chamar new e assim especificar
+A ideia é simples: em vez de um cliente que precisa de um objeto chamar new e assim especificar
 a classe concreta que ele instancia, o cliente chama um método abstrato (Factory Method) 
 especificado em alguma classe abstrata (ou interface) e a subclasse concreta vai decidir que 
 tipo exato de objeto criar e retornar.
@@ -349,7 +357,7 @@ cliente saiba;
 Patterns Relacionados:
 
 - Abstract Factory, que é uma camada acima que um Factory Method;
-- Template method, que define um esqueleto do algorítmo para adiar alguns passos da subclasse,
+- Template method, que define um esqueleto do algoritmo para adiar alguns passos da subclasse,
 ou evitar subclasses;
 - Prototype, que cria um novo objeto copiando uma instância, portanto, reduzindo as subclasses;
 - Singleton, que faz com que o retorno do factory method, seja único.
@@ -431,8 +439,8 @@ Adapter permite que um objeto cliente utilize serviços de outros objetos com int
 Patterns Relacionados:
 
 - Proxy, que fornece a mesma interface como seu objeto, enquanto que um adapter fornece uma 
-interfate difrente para o objeto que se adapta.
-- Decorator, qie foca na adição de novas funções para um objeto, enquanto que um Adapter
+interface diferente para o objeto que se adapta.
+- Decorator, que foca na adição de novas funções para um objeto, enquanto que um Adapter
 coordena dois objetos diferentes.
 - Bridge, que tenta separar uma interface de sua implementação, e faz um objeto variar 
 independentemente, enquanto um Adapter tenta alterar e cooperar a interface de um objeto.
@@ -448,7 +456,7 @@ Através do padrão Bridge, a hierarquia que define os tipos de janelas é separada
 
 Patterns Relacionados:
 
-- Abstract Factory, que pode ser usado para cirar e configurar um Bridge particular.
+- Abstract Factory, que pode ser usado para criar e configurar um Bridge particular.
 - Adapter, que classes não-relacionadas trabalhem juntas, sendo que Bridge faz um "clear-cut" entre abstração e implementação.
 
 Composite
@@ -479,7 +487,7 @@ um valor padrão (0 no caso).
 Patterns Relacionados:
 
 - Adapter pattern, que fornece uma interface diferente de objeto que adapta, enquanto um Decorator, 
-altera as responsalidades de um objeto.
+altera as responsabilidades de um objeto.
 - Proxy pattern, que controla o acesso para o objeto, enquanto o Decorator foca na adição de novas
 funcionalidades de um objeto.
 - Composite pattern, que agrega um objeto, enquanto um Decorator adiciona resposabilidades para um
@@ -520,8 +528,8 @@ Patterns Relacionados:
 - Composite, que suporta estruturas recursivas (encadeadas), enquanto um Flyweight é frequentemente aplicado nele.
 - Factory Method, que produz objeto específico sobre requerimento, enquanto um  Flyweight utiliza-os para reduzir objetos.
 - State, que permite um objeto alterar seu comportamento quando seu estado interno é alterado, enquanto um Flyweight 
-é melhor implmentado nele.
-- Strategy, que permite que um algorítmo varie independentemente para alternar suas necessidades, enquanto
+é melhor implementado nele.
+- Strategy, que permite que um algoritmo varie independentemente para alternar suas necessidades, enquanto
 um Flyweight baseia-se em tal Strategy.
 
 Proxy

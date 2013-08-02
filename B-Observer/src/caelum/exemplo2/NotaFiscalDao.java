@@ -1,4 +1,4 @@
-package b_caelum;
+package caelum.exemplo2;
 
 public class NotaFiscalDao implements AcoesAposGerarNota {
 

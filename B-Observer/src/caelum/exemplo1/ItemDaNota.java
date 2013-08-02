@@ -1,4 +1,4 @@
-package a_caelum;
+package caelum.exemplo1;
 
 public class ItemDaNota {
 	

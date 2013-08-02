@@ -1,4 +1,4 @@
-package b_caelum;
+package caelum.exemplo1;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -42,24 +42,15 @@ public class NotaFiscalBuilder {
 		return this;
 	}
 	
-	public NotaFiscalBuilder adicionaAcao(List<AcoesAposGerarNota> acoes) {
-		this.acoes = acoes;
+	public NotaFiscalBuilder adicionaAcao(AcoesAposGerarNota acao) {
+		this.acoes.add(acao);
 		return this;
 	}
 	
-	
 	public NotaFiscal constroiNotaFiscal() {
 		for(AcoesAposGerarNota acao : acoes) {
-			acao.executa(this);
+			acao.executa();
 		}
 		return new NotaFiscal(razaoSocial, cnpj, itens, dataDeEmissao, valorBruto, impostos, observacao);
-	}
-	
-	public double getValorBruto() {
-		return valorBruto;
-	}
-
-	public void setValorBruto(double valor) {
-		this.valorBruto = valor;
 	}
 }

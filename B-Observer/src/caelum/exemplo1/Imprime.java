@@ -1,9 +1,9 @@
-package b_caelum;
+package caelum.exemplo1;
 
 public class Imprime implements AcoesAposGerarNota {
 
 	@Override
-	public void executa(NotaFiscalBuilder nf) {
+	public void executa() {
 		System.out.println("Imprime");
 	}
 

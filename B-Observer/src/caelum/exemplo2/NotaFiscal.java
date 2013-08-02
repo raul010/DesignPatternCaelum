@@ -1,4 +1,4 @@
-package b_caelum;
+package caelum.exemplo2;
 import java.util.Calendar;
 import java.util.List;
 
