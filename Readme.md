@@ -102,15 +102,6 @@ implementará uma máscara, que possui 'buracos' que são os métodos implementados 
 classe filho.
 
 
-State
--------------
-Alguns objetos necessitam de um estado, e muitas vezes, de um comportamento
-diferenciado, conforme o estado específico no qual ele se encontra atualmente.
-A classe de um pojo, guardará um atributo que faz referência à interface que 
-representa o estado atual (EstadoAtualDoObjeto), e alguns métodos que permitem alterarmos
-entre os objetos implementadores que representam cada estado (Aprovado), e outros
-métodos que também usam este atributo do EstadoAtualDoObjeto, para executar ação
-ou lançar uma Runtime, de acordo com o estado atual.
 
 Builder
 ------------
@@ -227,22 +218,6 @@ com a sua referência armazenada de BtnView e alternativamente, faz modificações 
 objetos também (como alternar flags).
 
 
-Observer 
----------------
-Um objeto notifica outro, se houver alterações neste. 
-Na construção do Builder, pode-se definir serviços à serem executados
-ao final da construção. No momento da construção, é passado um objeto implementador
-da interface ExecutaAcao como parâmetro do método à classe construtora
-(ConstrutorNotaFiscal), que a recebe e inclui numa lista. Esta lista é iterada no
-mesmo método que constrói a NotaFiscal, e cada iteração, chamado o método executa
-da interface implementada por cada ação.
-
-Patterns Relacionados:
-
-- Singleton,  que é usado para fazer objetos observáveis únicos e globalmente acessíveis.
-- Mediator, que é usado para encapsular objetos atualizados.
-
-
 Memento
 --------------
 Memento permite armazenar o estado interno de um objeto em um determinado momento, para que 
@@ -270,6 +245,38 @@ a lista.
 restoreFromMemento(Memento m), passando um objeto específico de Memento, salvo na lista, 
 atribuindo-se então, os mesmos atributos anteriormente salvos em Memento, recuperados agora
 portanto em Originator.
+
+
+Observer 
+---------------
+Um objeto notifica outro, se houver alterações neste. 
+Na construção do Builder, pode-se definir serviços à serem executados
+ao final da construção. No momento da construção, é passado um objeto implementador
+da interface ExecutaAcao como parâmetro do método à classe construtora
+(ConstrutorNotaFiscal), que a recebe e inclui numa lista. Esta lista é iterada no
+mesmo método que constrói a NotaFiscal, e cada iteração, chamado o método executa
+da interface implementada por cada ação.
+
+Patterns Relacionados:
+
+- Singleton,  que é usado para fazer objetos observáveis únicos e globalmente acessíveis.
+- Mediator, que é usado para encapsular objetos atualizados.
+
+
+State
+-------------
+Alguns objetos necessitam de um estado, e muitas vezes, de um comportamento
+diferenciado, conforme o estado específico no qual ele se encontra atualmente.
+A classe de um pojo, guardará um atributo que faz referência à interface que 
+representa o estado atual (EstadoAtualDoObjeto), e alguns métodos que permitem alterarmos
+entre os objetos implementadores que representam cada estado (Aprovado), e outros
+métodos que também usam este atributo do EstadoAtualDoObjeto, para executar ação
+ou lançar uma Runtime, de acordo com o estado atual.
+
+- Flyweight, que explica onde e como o objeto pode ser compartilhado.
+- Singleton que é frequentemente usado com State Pattern para certificar que algum
+estado alterado é compartilhado como sua própria classe e não por instâncias
+da classe.
 
 
 Visitor
