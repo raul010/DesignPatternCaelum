@@ -168,6 +168,13 @@ Um Invoker, que é uma classe intermediária (Switch) é responsável por chamar a e
 dos comandos. Alternativamente, ele também salva o histórico da ação. A implementação do Command
 optada (via polimorfismo), é passada como parâmetro do método. 
 
+Patterns Relacionados:
+
+- Composite, que agrega um objeto. Você pode combinar isto dentro de um Composite Command Pattern. 
+Em geral, um Composite Command é uma interface de Composite.
+- Memento, que mantem o estado de um objeto. Command suporta undo e reundo.
+
+
 Interpreter
 -----------------
 Define uma linguagem macro ou sintaxe, fazendo o parse e armazenando
@@ -189,6 +196,7 @@ outro uma Variable. O interpret chamará portanto:
 leftExpression|Minus|.interpret(variables) - rightExpression|Variable|.interpret(variables).
 Em Minus o interpret() tem duas variáveis em seus atributos, portanto:
 leftExpression|Variable|.interpret(variables) - rightExpression|Variable|.interpret(variables).
+
 
 Mediator
 ------------------
