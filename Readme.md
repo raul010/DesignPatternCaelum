@@ -81,11 +81,56 @@ Compartilhar, de forma eficiente, objetos que são usados em grande quantidade.
 
 Controlar as chamadas a um objeto através de outro objeto de mesma interface.
 
+
+Comportamental
+------------
+
+###Command
+
+Controlar as chamadas a um determinado componente, modelando cada requisição
+como um objeto. Permitir que as operações possam ser desfeitas, enfileiradas ou registradas.
+
+###Iterator 
+
+Fornecer um modo eficiente para percorrer sequencialmente os elementos de uma coleção,
+sem que a estrutura interna da coleção seja exposta.
+
+###Mediator 
+
+Diminuir a quantidade de “ligações” entre objetos introduzindo um mediador, através do qual
+toda comunicação entre os objetos será realizada.
+
+###Observer 
+
+Definir um mecanismo eficiente para reagir às alterações realizadas em determinados objetos.
+
+###State 
+
+Alterar o comportamento de um determinado objeto de acordo com o estado no qual ele se
+encontra.
+
+###Strategy 
+
+Permitir de maneira simples a variação dos algoritmos utilizados na resolução de um determinado problema.
+
+###Template Method 
+
+Definir a ordem na qual determinados passos devem ser realizados na resolução
+de um problema e permitir que esses passos possam ser realizados de formas diferentes de
+acordo com a situação.
+
+###Visitor 
+
+Permitir atualizações específicas em uma coleção de objetos de acordo com o tipo particular
+de cada objeto atualizado.
+
+
 Strategy
 ----------
 Polimorfismo; Qualquer objeto de um mesmo tipo (Imposto), pode ser
 passado como parâmetro de um método, e utilizado dentro desde método pela mesma
 chamada (ex. imposto.calcula(blah)).
+
 
 Chain Of Responsability
 -----------
@@ -94,13 +139,13 @@ métodos de vários objetos de um mesmo tipo até um deles retornar true. A ordem
 da sequência é previamente definida. Cada um destes objetos de um mesmo tipo
 guarda uma instância do próximo (da cadeia), e se retornar false, o chama.
 
+
 Template Method
 ------------
 Vários objetos de um mesmo tipo, têm o mesmo algorítimo
 (máscara). Então é delegado a chamada destes métodos à um método pai, que
 implementará uma máscara, que possui 'buracos' que são os métodos implementados na
 classe filho.
-
 
 
 Builder
